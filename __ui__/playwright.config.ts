@@ -19,7 +19,7 @@ export default defineConfig({
 
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: 'https://ta-0000-gusa-desktop.gusadev.com/',
+        baseURL: 'https://stable-gusa-desktop.gusadev.com/',
         trace: 'retain-on-failure',
         ignoreHTTPSErrors: true,
         launchOptions: {
