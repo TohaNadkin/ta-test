@@ -9,6 +9,7 @@ type Options = {
     dataLayer: DataLayer;
     CategoryPage: CategoryPage;
 };
+
 const test = base.extend<Options>({
     CategoryPage: async ({ page }, use) => {
         use(new CategoryPage(page));
@@ -16,6 +17,16 @@ const test = base.extend<Options>({
     dataLayer: async ({ page }, use) => {
         await use(new DataLayer(page));
     },
+});
+
+test.beforeEach(async ({ baseURL, context }) => {
+    await context.addCookies([
+        {
+            name: 'OptanonAlertBoxClosed',
+            value: new Date().toISOString(),
+            url: baseURL,
+        },
+    ]);
 });
 
 export { test, expect };
