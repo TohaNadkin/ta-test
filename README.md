@@ -14,7 +14,7 @@
  2. [Create a new private repository on Github](https://github.com/new/) and name it `ta-test`.
 
  3. Mirror-push your bare clone to your new `ta-test` repository.
-    > Replace `<your_username>` with your actual Github username in the url below.
+    > Replace `<your_username>` with your actual GitHub username in the url below.
     
     ```bash
     cd ta-test.git
@@ -36,4 +36,4 @@
  6. Open "Settings" => "Collaborators" page of your `ta-test` repository: 
 		https://github.com/<your_username>/ta-test/settings/access
 
- 7. Click `Add People` & add 'dmaksimovskih' and 'stercoris' to collaborators list
+ 7. Click `Add People` & add 'dmaksimovskih', 'LMikhail1' & 'aleksandrashmoylova' to collaborators list

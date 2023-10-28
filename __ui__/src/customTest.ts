@@ -1,7 +1,7 @@
 import { test as base, expect } from '@playwright/test';
 import { DataLayer } from '@Utils/dataLayer';
 
-// Добавить недоставющие страницы в фикстуры и типы
+// Добавить недостающие страницы в фикстуры и типы
 
 type Options = {
     dataLayer: DataLayer;

@@ -6,7 +6,11 @@ Test file - `__ui__/tests/analytics/checkoutSidereview.test.ts`
 На странице корзины нажать Proceed to Checkout. И пройти до шага оплаты.
 1) Ввести неправильный номер карты(4222 2222 2222 2222) или оставить поле пустым. 
 
-    ![img.png](img.png)
+   Если появляется сохраненная карта, то выбрать "Or, use different card".
+
+    ![img.png](images/useDifferentCard.png)
+
+    ![img.png](images/errorCreditCard.png)
     
     Поймать эвент:
     ```
