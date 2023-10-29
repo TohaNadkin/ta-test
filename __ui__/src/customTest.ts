@@ -1,5 +1,6 @@
 import { CartPage } from '@Pages/cartPage';
 import { CategoryPage } from '@Pages/categoryPage';
+import { CheckoutPage } from '@Pages/checkoutPage';
 import { ProductPage } from '@Pages/productPage';
 import { WizardPage } from '@Pages/wizardPage';
 import { test as base, expect } from '@playwright/test';
@@ -14,6 +15,7 @@ type Options = {
     productPage: ProductPage;
     wizardPage: WizardPage;
     cartPage: CartPage;
+    checkoutPage: CheckoutPage;
 };
 
 const test = base.extend<Options>({
@@ -28,6 +30,9 @@ const test = base.extend<Options>({
     },
     cartPage: async ({ page }, use) => {
         use(new CartPage(page));
+    },
+    checkoutPage: async ({ page }, use) => {
+        use(new CheckoutPage(page));
     },
     dataLayer: async ({ page }, use) => {
         await use(new DataLayer(page));
