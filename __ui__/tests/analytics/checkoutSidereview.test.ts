@@ -5,8 +5,6 @@ import { faker } from '@faker-js/faker';
 
 const INVALID_CARD_DATA = {
     number: '4222222222222222',
-    expDate: '12 / 23',
-    cvv: '123',
 };
 
 const CREDIT_CARD_EVENT = {
@@ -23,7 +21,7 @@ test.beforeEach(async ({page, categoryPage, productPage, cartPage, checkoutPage}
     const [firstProduct] = await categoryPage.getCategoryContent();
     await firstProduct.seeFrame();
 
-    await productPage.addToCart();
+    await productPage.addToCart();//санная корзина не хочет ттовары добавлять(
 
     await cartPage.checkout();
 
@@ -41,12 +39,20 @@ test.beforeEach(async ({page, categoryPage, productPage, cartPage, checkoutPage}
 
 test.describe('"CheckoutNonInteraction" "Error" events', () => {
     test('hui hui', async ({ page, checkoutPage }) => {
-        
 
+        await page.waitForTimeout(5000);
         await checkoutPage.paymentStep.cardForm.useDifferentCard();
+        await page.waitForTimeout(5000);
         await checkoutPage.paymentStep.cardForm.fillCardForm(INVALID_CARD_DATA);
 
+        await checkoutPage.paymentStep.cardForm.placeOrder();
+
+
         const dataLayer: DataLayer = new DataLayer(page);
+
+        // const hui = await dataLayer.events
+
+        // console.log(hui);
 
         const [event] = await dataLayer.waitForDataLayer(CREDIT_CARD_EVENT)
 
