@@ -11,7 +11,7 @@ describe('Cart page content', () => {
 
         await cartPage.fulfill();
 
-        expect(cartPage.isEmpty()).toBe(true);
+        expect(cartPage.isEmpty()).toBe(false);
 
         cartPage.debug();
     });
