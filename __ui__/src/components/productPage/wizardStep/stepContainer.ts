@@ -1,6 +1,4 @@
 import { Component } from '@Core/component';
-import { ContinueButton } from './stepContainer/continueButton';
-import { AddToCartButton } from './stepContainer/addToCartButton';
 import { StepOption } from './stepContainer/stepOption';
 import { Locator } from '@playwright/test';
 
@@ -16,9 +14,17 @@ export class StepContainer extends Component {
             ),
     };
 
-    public continueButton = new ContinueButton(this.locators.continueButton, this.page);
-    public addToCartButton = new AddToCartButton(this.locators.addToCartButton, this.page);
-    public noThxButton = new ContinueButton(this.locators.noThxButton, this.page);
+    public async continue(): Promise<void> {
+        await this.locators.continueButton.click();
+    }
+
+    public async addToCart(): Promise<void> {
+        await this.locators.addToCartButton.click();
+    }
+
+    public async noThanks(): Promise<void> {
+        await this.locators.noThxButton.click();
+    }
 
     public async getOptions(): Promise<Array<StepOption>> {
         return (await this.locators.option.all()).map(

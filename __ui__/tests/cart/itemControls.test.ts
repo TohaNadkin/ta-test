@@ -20,12 +20,12 @@ test.describe('Item controls on cart page', () => {
         await nonRxWizardUsageStepOption.select();
         const [firstWizardLensePackage] = await wizardPage.stepContainer.getOptions();
         await firstWizardLensePackage.select();
-        await wizardPage.stepContainer.continueButton.click();
+        await wizardPage.stepContainer.continue();
         const [firstWizardLenseType] = await wizardPage.stepContainer.getOptions();
         await firstWizardLenseType.select();
-        await wizardPage.stepContainer.continueButton.click();
-        await wizardPage.stepContainer.noThxButton.click();
-        await wizardPage.stepContainer.addToCartButton.click();
+        await wizardPage.stepContainer.continue();
+        await wizardPage.stepContainer.noThanks();
+        await wizardPage.stepContainer.addToCart();
 
         let cartTotal = await cartPage.getCartTotal();
         const [cartItem] = await cartPage.getItemList();

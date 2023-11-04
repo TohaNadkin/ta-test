@@ -3,7 +3,7 @@ import { DeliveryForm } from './form/form';
 
 export class DeliveryStep extends Component {
     protected locators = {
-        continueBtn: this.page.locator('button', {
+        continueBtn: this.locator.locator('button', {
             hasText: 'Continue',
         }),
     };

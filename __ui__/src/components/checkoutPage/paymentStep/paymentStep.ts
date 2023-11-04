@@ -4,10 +4,10 @@ import { CashOnDelivery } from './paymentMethods/cashOnDelivery';
 
 export class PaymentStep extends Component {
     protected locators = {
-        chooseCashOnDeliveryMethod: this.page.locator('button', {
+        chooseCashOnDeliveryMethod: this.locator.locator('button', {
             hasText: 'Cash On Delivery',
         }),
-        cashOnDeliveryMethod: this.page.locator(
+        cashOnDeliveryMethod: this.locator.locator(
             '//div[contains(@class, "paymentWrapper__wrapper")]',
             {
                 hasText: 'Cash On Delivery',
