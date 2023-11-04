@@ -4,7 +4,13 @@ import { Pathes } from '@Utils/pathes';
 import { waitFor } from '@Utils/waitFor';
 
 test.describe('Item controls on cart page', () => {
-    test('hui hui', async ({ page, categoryPage, productPage, cartPage, wizardPage }) => {
+    test('change cart item number', async ({
+        page,
+        categoryPage,
+        productPage,
+        cartPage,
+        wizardPage,
+    }) => {
         await page.goto(Pathes.eyeglassesCategory);
 
         await categoryPage.clickNoThxBtn();

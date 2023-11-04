@@ -1,5 +1,4 @@
 import { CookiePopup } from '@Components/categoryPage/cookiePopup';
-import { NoThxButton } from '@Components/categoryPage/noThxButton';
 import { Product } from '@Components/categoryPage/product';
 import { Container } from '@Core/container';
 
