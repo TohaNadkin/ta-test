@@ -13,7 +13,10 @@ export class CategoryPage extends Container {
     };
 
     public cookiePopup = new CookiePopup(this.locators.cookiePopup);
-    public noThxButton = new NoThxButton(this.locators.noThxBtn, this.page);
+
+    public async clickNoThxBtn() {
+        await this.locators.noThxBtn.click();
+    }
 
     public async getCategoryContent(): Promise<Array<Product>> {
         const content = await this.locators.content.all();

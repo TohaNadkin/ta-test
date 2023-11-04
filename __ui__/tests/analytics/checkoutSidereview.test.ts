@@ -44,10 +44,16 @@ const CASH_OB_DELIVERY_ORDER_EVENT = {
 };
 
 test.describe('"CheckoutNonInteraction" "Error" events', () => {
-    test('hui hui', async ({ page, categoryPage, productPage, cartPage, checkoutPage }) => {
+    test('checkout sunglasses', async ({
+        page,
+        categoryPage,
+        productPage,
+        cartPage,
+        checkoutPage,
+    }) => {
         await page.goto(Pathes.sunglassesCategory);
 
-        await categoryPage.noThxButton.click();
+        await categoryPage.clickNoThxBtn();
 
         const [firstProduct] = await categoryPage.getCategoryContent();
         await firstProduct.seeFrame();

@@ -1,3 +1,10 @@
 {
-  "eslint.workingDirectories": ["./integration", "./integration/__specs__", "./__ui__"]
+  "eslint.workingDirectories": [
+    "./integration",
+    "./integration/__specs__",
+    "./__ui__"
+  ],
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "files.autoSave": "onWindowChange",
+  "editor.fontLigatures": true
 }
